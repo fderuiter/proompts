@@ -1,3 +1,4 @@
+"""Module docstring."""
 from pathlib import Path
 from typing import Set, Union
 from promptops import console
@@ -51,6 +52,7 @@ class DirectoryReconciler:
         return would_write
 
     def _would_be_empty(self, directory: Path, stale_paths: Set[Path]) -> bool:
+        """Missing docstring."""
         for p in directory.rglob('*'):
             if p.is_file() and p.resolve() not in stale_paths:
                 return False

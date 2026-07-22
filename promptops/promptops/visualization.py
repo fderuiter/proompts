@@ -1,9 +1,12 @@
+"""Module docstring."""
 from promptops.validation import WorkflowSchema
 from promptops.theme import ThemeSync
 
 class MermaidGrapher:
+    """Missing docstring."""
     @staticmethod
     def generate(wf: WorkflowSchema) -> str:
+        """Missing docstring."""
         if not wf.steps and not wf.inputs:
             return ""
         

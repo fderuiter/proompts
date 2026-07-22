@@ -3,9 +3,7 @@ name = "tools"
 version = "0.1.0"
 description = "Developer Tools and Scripts"
 dependencies = [
-    "promptops",
-    "PyYAML",
-    "pydantic>=2.0.0"
+    "promptops"
 ]
 requires-python = ">=3.8"
 

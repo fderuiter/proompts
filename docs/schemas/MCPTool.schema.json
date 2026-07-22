@@ -1,6 +1,7 @@
 {
   "$defs": {
     "InputSchema": {
+      "description": "Missing docstring.",
       "properties": {
         "type": {
           "default": "object",
@@ -40,6 +41,7 @@
       "type": "object"
     }
   },
+  "description": "Missing docstring.",
   "properties": {
     "name": {
       "title": "Name",

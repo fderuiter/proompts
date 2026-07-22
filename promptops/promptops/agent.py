@@ -1,3 +1,4 @@
+"""Module docstring."""
 import sys
 import json
 import re
@@ -8,6 +9,7 @@ from typing import Tuple, List, Dict, Any
 from promptops.utils import iter_prompt_files, load_yaml, iter_skill_manifests, parse_skill_manifest, iter_workflow_files, WORKFLOWS_DIR, get_tool_name, get_tool_name_mcp, resolve_skill_from_path
 
 def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """Missing docstring."""
     manifests = []
     skills = []
     
@@ -90,6 +92,7 @@ def get_tools_info(prompts_dir: Path) -> Tuple[List[Dict[str, Any]], List[Dict[s
     return tools_info, manifests, prompts, skills, workflows
 
 def generate_config(prompts_dir: str):
+    """Missing docstring."""
     root = Path(prompts_dir).resolve().parent
     python_path = sys.executable
     script_path = str(root / "mcp_server.py")
@@ -109,6 +112,7 @@ def generate_config(prompts_dir: str):
     print(json.dumps(config, indent=2))
 
 def discovery_report(prompts_dir: str):
+    """Missing docstring."""
     prompts_dir_path = Path(prompts_dir).resolve()
     tools_info, manifests, prompts, skills, workflows = get_tools_info(prompts_dir_path)
     

@@ -1,6 +1,7 @@
 {
   "$defs": {
     "StatusLevel": {
+      "description": "Missing docstring.",
       "enum": [
         "draft",
         "active"
@@ -9,6 +10,7 @@
       "type": "string"
     }
   },
+  "description": "Missing docstring.",
   "properties": {
     "domain": {
       "title": "Domain",

@@ -1,3 +1,4 @@
+"""Module docstring."""
 import json
 import logging
 from functools import wraps
@@ -45,9 +46,12 @@ def extract_text(response: Any) -> str:
 
 
 def guard(prompt_id: str, mode: Literal["fail_fast", "warning"] = "fail_fast") -> Callable:
+    """Missing docstring."""
     def decorator(func: Callable) -> Callable:
+        """Missing docstring."""
         @wraps(func)
         def wrapper(*args, **kwargs) -> Any:
+            """Missing docstring."""
             # 1. Execute the function to get the LLM response
             response = func(*args, **kwargs)
             

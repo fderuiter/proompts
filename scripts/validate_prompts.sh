@@ -22,6 +22,11 @@ fi
 echo "Running static accessibility scanner..."
 node scripts/accessibility-scan.js || exit 1
 
+echo "Running workspace boundary static checks..."
+uv run ruff check promptops/ --config promptops/ruff.toml || exit 1
+uv run ruff check tools/ --config tools/ruff.toml || exit 1
+uv run ruff check studio/ --config studio/ruff.toml || exit 1
+
 echo "Running YAML syntax validation..."
 uv run yamllint --strict . || exit 1
 
@@ -50,6 +55,9 @@ uv run promptops docs --check || {
 
 echo "Checking for dead code..."
 uv run vulture || exit 1
+
+echo "Checking docstrings..."
+uv run python3 tools/tools/scripts/check_docstrings.py || exit 1
 
 echo "Testing documentation snippets simulation..."
 uv run python3 tools/tools/scripts/test_docs_snippets.py || exit 1

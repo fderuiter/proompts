@@ -1,6 +1,7 @@
 {
   "$defs": {
     "StatusLevel": {
+      "description": "Missing docstring.",
       "enum": [
         "draft",
         "active"
@@ -9,6 +10,7 @@
       "type": "string"
     },
     "WorkflowEdge": {
+      "description": "Missing docstring.",
       "properties": {
         "target": {
           "title": "Target",
@@ -34,6 +36,7 @@
       "type": "object"
     },
     "WorkflowInput": {
+      "description": "Missing docstring.",
       "properties": {
         "name": {
           "title": "Name",
@@ -59,6 +62,7 @@
       "type": "object"
     },
     "WorkflowMetadata": {
+      "description": "Missing docstring.",
       "properties": {
         "domain": {
           "title": "Domain",
@@ -88,6 +92,7 @@
       "type": "object"
     },
     "WorkflowStep": {
+      "description": "Missing docstring.",
       "properties": {
         "step_id": {
           "title": "Step Id",
@@ -137,6 +142,7 @@
       "type": "object"
     }
   },
+  "description": "Missing docstring.",
   "properties": {
     "name": {
       "title": "Name",

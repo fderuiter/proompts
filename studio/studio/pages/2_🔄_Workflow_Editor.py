@@ -8,10 +8,17 @@ from typing import Any
 st.set_page_config(page_title="Workflow Editor", layout="wide")
 st.title("Workflow Editor")
 
-from promptops.utils import ROOT, iter_workflow_files, iter_prompt_files
+from studio.helpers import (
+    render_file_selector, 
+    render_schema_form, 
+    load_asset_data, 
+    validate_and_save_asset,
+    get_relative_asset_paths
+)
+from promptops.utils import ROOT
 base_dir = str(ROOT)
-workflow_files = [os.path.relpath(str(f), base_dir) for f in iter_workflow_files()]
-prompt_files = [os.path.relpath(str(f), base_dir) for f in iter_prompt_files() if str(f).endswith('.prompt.md')]
+workflow_files = get_relative_asset_paths("workflow")
+prompt_files = get_relative_asset_paths("prompt", extensions=[".prompt.md"])
 
 selected_file = st.selectbox("Select a workflow to edit", ["Create New..."] + workflow_files)
 
@@ -35,43 +42,14 @@ if selected_file == "Create New...":
 else:
     new_file_path = selected_file
     file_path = os.path.join(base_dir, selected_file)
-    try:
-        data = load_yaml(file_path, raw=True)
-    except Exception as e:
-        st.error(f"Failed to load file: {e}")
+    data = load_asset_data(file_path)
+    if not data:
         st.stop()
 st.subheader(f"Editing: {selected_file}")
 
 # Load schema to dynamically generate UI
-schema = WorkflowSchema.model_json_schema()
-
-properties = schema.get("properties", {})
-for field_name, field_info in properties.items():
-    if field_name not in ["inputs", "steps"]:
-        val = data.get(field_name, "")
-        label = field_info.get("description", field_name)
-        if field_info.get("type") == "string":
-            if "description" in field_name.lower():
-                data[field_name] = st.text_area(label, value=val)
-            else:
-                data[field_name] = st.text_input(label, value=val)
-        elif field_info.get("type") == "boolean":
-            data[field_name] = st.checkbox(label, value=bool(val))
-        elif field_name == "metadata":
-            st.subheader("Metadata")
-            if "metadata" not in data or not data["metadata"]:
-                data["metadata"] = {}
-            meta_schema = schema.get("$defs", {}).get("WorkflowMetadata", {}).get("properties", {})
-            for m_key, m_info in meta_schema.items():
-                m_val = data["metadata"].get(m_key, m_info.get("default", ""))
-                if m_info.get("type") == "boolean":
-                    data["metadata"][m_key] = st.checkbox(m_key, value=bool(m_val), key=f"wf_meta_{m_key}")
-                elif m_info.get("type") == "array":
-                    m_val_str = ", ".join(m_val) if isinstance(m_val, list) else ""
-                    res = st.text_input(m_key, value=m_val_str, key=f"wf_meta_{m_key}")
-                    data["metadata"][m_key] = [x.strip() for x in res.split(",") if x.strip()]
-                else:
-                    data["metadata"][m_key] = st.text_input(m_key, value=m_val, key=f"wf_meta_{m_key}")
+skip_fields = ["inputs", "steps"]
+data = render_schema_form(WorkflowSchema, data, skip_fields=skip_fields)
 
 # Global Inputs Editor
 st.subheader("Global Inputs")
@@ -162,22 +140,15 @@ for i, step in enumerate(st.session_state['wf_steps']):
         for e_idx, edge in enumerate(next_edges):
             ecol1, ecol2, ecol3, ecol4 = st.columns([3, 2, 3, 1])
             
+            from promptops.validation import TransitionConstraint
+
             # Logic Builder for condition
             condition_str = edge.get("condition", "")
-            cond_var = ""
-            cond_op = "Always"
-            cond_val = ""
             
-            if condition_str:
-                import re
-                m = re.match(r"\{\%\s*if\s+(.+)\s+(==|!=|>|<|>=|<=)\s+(.+)\s*\%\}true\{\%\s*endif\s*\%\}", condition_str)
-                if m:
-                    cond_var = m.group(1).strip()
-                    cond_op = m.group(2).strip()
-                    cond_val = m.group(3).strip().strip("'\"")
-                else:
-                    cond_op = "Custom Jinja2"
-                    cond_val = condition_str
+            constraint = TransitionConstraint.from_jinja_expression(condition_str)
+            cond_var = constraint.variable or ""
+            cond_op = constraint.operator
+            cond_val = constraint.value or ""
             
             with ecol1:
                 if cond_op == "Custom Jinja2":
@@ -191,7 +162,8 @@ for i, step in enumerate(st.session_state['wf_steps']):
                     selected_val = st.text_input("Value", value=cond_val, key=f"cond_val_{i}_{e_idx}")
                     if target_var:
                         stripped_var = target_var.replace("{{", "").replace("}}", "")
-                        st.session_state['wf_steps'][i]['next'][e_idx]["condition"] = f"{{% if {stripped_var} {selected_op} '{selected_val}' %}}true{{% endif %}}"
+                        new_constraint = TransitionConstraint(variable=stripped_var, operator=selected_op, value=selected_val)
+                        st.session_state['wf_steps'][i]['next'][e_idx]["condition"] = new_constraint.to_jinja_expression()
                 elif selected_op == "Always":
                     if "condition" in st.session_state['wf_steps'][i]['next'][e_idx]:
                         del st.session_state['wf_steps'][i]['next'][e_idx]["condition"]
@@ -245,16 +217,9 @@ if st.button("Save Workflow", type="primary"):
     if not new_file_path.endswith('.workflow.yaml') and not new_file_path.endswith('.workflow.yml'):
         st.error("File path must end with .workflow.yaml or .workflow.yml")
     else:
-        try:
-            data['inputs'] = edited_inputs_df.to_dict('records')
-            data['steps'] = st.session_state['wf_steps']
-            
-            # Real-time validation using Pydantic
-            WorkflowSchema(**data)
-                
-            full_path = os.path.join(base_dir, new_file_path)
-            save_yaml(full_path, data)
-            st.success("Saved workflow successfully and validated!")
-        except Exception as e:
-            st.error(f"Error: {e}")
+        data['inputs'] = edited_inputs_df.to_dict('records')
+        data['steps'] = st.session_state['wf_steps']
+        
+        full_path = os.path.join(base_dir, new_file_path)
+        validate_and_save_asset(full_path, data, WorkflowSchema, success_message="Saved workflow successfully and validated!")
 

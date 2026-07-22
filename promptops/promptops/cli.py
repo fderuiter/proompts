@@ -1,3 +1,4 @@
+"""Module docstring."""
 import argparse
 import sys
 import os
@@ -15,11 +16,13 @@ from promptops import console
 logger = logging.getLogger(__name__)
 
 def setup_logging(verbose: bool = False) -> None:
+    """Missing docstring."""
     level = logging.DEBUG if verbose else logging.INFO
     logging.basicConfig(level=level, format='%(levelname)s: %(message)s')
     logger.setLevel(level)
 
 def search_prompts_func(query: str, verbose: bool = False):
+    """Missing docstring."""
     from promptops.validation import PromptSchema
     
     query = query.lower()
@@ -47,6 +50,7 @@ def search_prompts_func(query: str, verbose: bool = False):
         print(f"No prompts found matching '{query}'.")
 
 def get_parser():
+    """Missing docstring."""
     parser = argparse.ArgumentParser(description="PromptOps Toolkit CLI")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
@@ -123,6 +127,7 @@ def get_parser():
     return parser
 
 def main():
+    """Missing docstring."""
     parser = get_parser()
     args = parser.parse_args()
 

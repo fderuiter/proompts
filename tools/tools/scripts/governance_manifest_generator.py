@@ -19,7 +19,6 @@ import re
 from datetime import datetime, timezone
 from pathlib import Path
 import sys
-import yaml
 
 # Ensure we can import from the current directory
 try:
@@ -27,6 +26,7 @@ try:
         PROMPTS_DIR, 
         iter_prompt_files, 
         load_yaml, 
+        save_yaml,
         ROOT,
         MANIFEST_DIR,
         MANIFEST_FILE,
@@ -39,6 +39,7 @@ except Exception as e:
 MANIFEST_DIR.mkdir(parents=True, exist_ok=True)
 
 def generate_kb():
+    """Missing docstring."""
     if not KB_FILE.exists():
         kb = {
             "standards": {
@@ -68,17 +69,17 @@ def generate_kb():
                 }
             }
         }
-        with open(KB_FILE, 'w', encoding='utf-8') as f:
-            yaml.dump(kb, f)
-    with open(KB_FILE, 'r', encoding='utf-8') as f:
-        return yaml.safe_load(f)
+        save_yaml(KB_FILE, kb)
+    return load_yaml(KB_FILE)
 
 def hash_file(path):
+    """Missing docstring."""
     h = hashlib.sha256()
     h.update(path.read_bytes())
     return h.hexdigest()
 
 def extract_standards(text, kb):
+    """Missing docstring."""
     found = []
     text_upper = text.upper()
     for std_name, std_data in kb['standards'].items():
@@ -126,6 +127,7 @@ def multi_step_reflection(prompt_data, standard_name, kb):
     }
 
 def main():
+    """Missing docstring."""
     kb = generate_kb()
     
     manifest_data = {}
@@ -257,6 +259,7 @@ def main():
         
         # Helper to strip timestamp for comparison
         def strip_ts(records):
+            """Missing docstring."""
             return [{k: v for k, v in r.items() if k != 'timestamp'} for r in records]
             
         if strip_ts(snapshot_records) == strip_ts(prev_records):
