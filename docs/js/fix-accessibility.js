@@ -1,3 +1,4 @@
+
 const disableHiddenPaletteInputs = () => {
   document.querySelectorAll('input.md-option[aria-hidden="true"]').forEach((el) => {
     el.disabled = true;

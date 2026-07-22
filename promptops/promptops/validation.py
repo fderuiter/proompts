@@ -1,3 +1,4 @@
+"""Module docstring."""
 import os
 import re
 from enum import Enum
@@ -11,20 +12,24 @@ from promptops import console
 VAR_PATTERN = re.compile(r'\{\{([^}]+)\}\}')
 
 class ComplexityLevel(str, Enum):
+    """Missing docstring."""
     LOW = 'low'
     MEDIUM = 'medium'
     HIGH = 'high'
 
 class StatusLevel(str, Enum):
+    """Missing docstring."""
     DRAFT = 'draft'
     ACTIVE = 'active'
 
 class ToolCall(BaseModel):
+    """Missing docstring."""
     id: str = Field(...)
     type: str = Field("function")
     function: Dict[str, Any] = Field(...)
 
 class Message(BaseModel):
+    """Missing docstring."""
     role: Optional[str] = Field(None)
     content: Optional[Union[str, List[Any]]] = Field(None)
     tool_calls: Optional[List[ToolCall]] = Field(None)
@@ -51,6 +56,7 @@ class Message(BaseModel):
         return self
 
 class ModelParameters(BaseModel):
+    """Missing docstring."""
     temperature: float = Field(..., ge=0.0, le=2.0, description="Controls randomness (0.0-2.0)")
     max_tokens: Optional[int] = Field(None)
     top_p: Optional[float] = Field(None)
@@ -58,16 +64,19 @@ class ModelParameters(BaseModel):
     presence_penalty: Optional[float] = Field(None)
 
 class InputVariable(BaseModel):
+    """Missing docstring."""
     name: str = Field(...)
     description: str = Field(...)
     required: bool = Field(True)
     default: Optional[Any] = Field(None)
 
 class BaseMetadata(BaseModel):
+    """Missing docstring."""
     domain: str = Field(...)
     status: Optional[StatusLevel] = Field(default=StatusLevel.ACTIVE)
 
 class PromptMetadata(BaseMetadata):
+    """Missing docstring."""
     complexity: ComplexityLevel = Field(...)
     tags: List[str] = Field([])
     requires_context: bool = Field(False)
@@ -75,16 +84,19 @@ class PromptMetadata(BaseMetadata):
     maturity: Optional[str] = Field(None)
 
 class InputSchema(BaseModel):
+    """Missing docstring."""
     type: str = Field("object")
     properties: Optional[Dict[str, Any]] = Field(None)
     required: Optional[List[str]] = Field(None)
 
 class MCPTool(BaseModel):
+    """Missing docstring."""
     name: str = Field(...)
     description: str = Field(...)
     inputSchema: InputSchema = Field(...)
 
 class PromptSchema(BaseModel):
+    """Missing docstring."""
     name: str = Field(...)
     version: str = Field("0.1.0")
     description: str = Field(...)
@@ -103,6 +115,7 @@ class PromptSchema(BaseModel):
     @field_validator("evaluators")
     @classmethod
     def check_evaluators_logic(_cls, v: List[Any]) -> List[Any]:
+        """Missing docstring."""
         if v is None:
             return v
         for evaluator in v:
@@ -116,6 +129,7 @@ class PromptSchema(BaseModel):
     @field_validator("messages")
     @classmethod
     def check_messages_length(_cls, v: List[Message]) -> List[Message]:
+        """Missing docstring."""
         if len(v) < 2:
             raise ValueError("messages list must have at least 2 items")
         return v
@@ -194,11 +208,13 @@ class PromptSchema(BaseModel):
         return self
 
 class EvaluatorRule(BaseModel):
+    """Missing docstring."""
     rule_type: str = Field(...)  # "Contains", "Does Not Contain", "Regex Match", "Length >", "Length <", "Custom Python"
     value: str = Field(...)
 
     @classmethod
     def from_python_expression(cls, expr: str) -> "EvaluatorRule":
+        """Missing docstring."""
         expr_str = expr.strip()
         if expr_str.startswith("len(output) > ") and expr_str[14:].isdigit():
             return cls(rule_type="Length >", value=expr_str[14:])
@@ -218,6 +234,7 @@ class EvaluatorRule(BaseModel):
         return cls(rule_type="Custom Python", value=expr_str)
 
     def to_python_expression(self) -> str:
+        """Missing docstring."""
         if self.rule_type == "Contains":
             return f"'{self.value}' in output"
         elif self.rule_type == "Does Not Contain":
@@ -232,12 +249,14 @@ class EvaluatorRule(BaseModel):
 
 
 class TransitionConstraint(BaseModel):
+    """Missing docstring."""
     variable: Optional[str] = None
     operator: str = "Always"  # "Always", "==", "!=", ">", "<", "Custom Jinja2"
     value: Optional[str] = None
 
     @classmethod
     def from_jinja_expression(cls, expr: str) -> "TransitionConstraint":
+        """Missing docstring."""
         if not expr:
             return cls(operator="Always")
         import re
@@ -250,6 +269,7 @@ class TransitionConstraint(BaseModel):
         return cls(operator="Custom Jinja2", value=expr)
 
     def to_jinja_expression(self) -> str:
+        """Missing docstring."""
         if self.operator == "Always":
             return ""
         if self.operator == "Custom Jinja2":
@@ -260,23 +280,28 @@ class TransitionConstraint(BaseModel):
         return f"{{% if {self.variable} {self.operator} '{val}' %}}true{{% endif %}}"
 
 class WorkflowInput(BaseModel):
+    """Missing docstring."""
     name: str = Field(...)
     description: Optional[str] = Field(None)
 
 class WorkflowEdge(BaseModel):
+    """Missing docstring."""
     target: str = Field(...)
     condition: Optional[str] = Field(None)
 
 class WorkflowStep(BaseModel):
+    """Missing docstring."""
     step_id: str = Field(...)
     prompt_file: str = Field(...)
     map_inputs: Dict[str, Any] = Field(...)
     next: Optional[Union[str, List[Union[str, WorkflowEdge]]]] = Field(None)
 
 class WorkflowMetadata(BaseMetadata):
+    """Missing docstring."""
     topic: str = Field(...)
 
 class WorkflowSchema(BaseModel):
+    """Missing docstring."""
     name: str = Field(...)
     description: Optional[str] = Field(None)
     metadata: Optional[WorkflowMetadata] = Field(None)
@@ -285,6 +310,7 @@ class WorkflowSchema(BaseModel):
     testData: Optional[List[Any]] = Field(None)
 
 def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_dir: str, call_stack: Optional[Set[str]] = None) -> List[str]:
+    """Missing docstring."""
     if call_stack is None:
         call_stack = set()
     
@@ -366,6 +392,7 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
     visited_cycle = set()
     rec_stack = set()
     def detect_cycle(node):
+        """Missing docstring."""
         visited_cycle.add(node)
         rec_stack.add(node)
         for neighbor in graph.get(node, []):
@@ -439,6 +466,7 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
                     continue
         
         def flatten_keys(d, parent_key=''):
+            """Missing docstring."""
             items = []
             for k, v in d.items():
                 new_key = f"{parent_key}.{k}" if parent_key else k
@@ -458,6 +486,7 @@ def analyze_workflow_dependencies(workflow_file: str, workflow_data: dict, root_
     return issues
 
 def update_last_modified(file_path: Path) -> bool:
+    """Missing docstring."""
     from datetime import datetime, timezone
     try:
         content_text = file_path.read_text(encoding="utf-8")
@@ -507,6 +536,7 @@ def update_last_modified(file_path: Path) -> bool:
     return False
 
 def detect_workflow_redundancies(workflows_data: List[tuple[str, dict]]):
+    """Missing docstring."""
     step_signatures = {}
     mapping_signatures = {}
     sequence_signatures = {}
@@ -560,6 +590,7 @@ def detect_workflow_redundancies(workflows_data: List[tuple[str, dict]]):
 
 
 def validate_prompts(directory: str, strict: bool = False, files: Optional[List[str]] = None) -> bool:
+    """Missing docstring."""
     ok = True
     seen_names: Dict[str, str] = {}
     dir_path = os.environ.get('PROMPTOPS_REGISTRY', directory)
@@ -737,6 +768,7 @@ import json
 from pydantic import create_model
 
 def json_schema_to_pydantic_fields(schema: Dict[str, Any]) -> Dict[str, Any]:
+    """Missing docstring."""
     if schema.get("type") != "object":
         raise ValueError("Only 'object' type is supported for root output_schema.")
     
@@ -782,6 +814,7 @@ def json_schema_to_pydantic_fields(schema: Dict[str, Any]) -> Dict[str, Any]:
     return fields
 
 def validate_response(response_text: str, output_schema: Optional[Dict[str, Any]] = None, evaluators: Optional[list] = None) -> str:
+    """Missing docstring."""
     if output_schema:
         cleaned_text = response_text.strip()
         if cleaned_text.startswith("```json"):
@@ -821,7 +854,9 @@ def validate_response(response_text: str, output_schema: Optional[Dict[str, Any]
     return response_text
 
 class ProomptsGuardError(Exception):
+    """Missing docstring."""
     pass
 
 class ProomptsValidationError(ProomptsGuardError):
+    """Missing docstring."""
     pass

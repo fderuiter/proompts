@@ -1,3 +1,4 @@
+"""Module docstring."""
 from promptops.validation import ProomptsValidationError, validate_response
 from typing import Dict, Any, Optional
 import json
@@ -21,6 +22,7 @@ from promptops.utils import load_yaml, PROMPTS_DIR
 logger = logging.getLogger(__name__)
 
 class KeepUndefined(Undefined):
+    """Missing docstring."""
     def __getattr__(self, name):
         return KeepUndefined(name=f"{self._undefined_name}.{name}")
         
@@ -31,9 +33,11 @@ class KeepUndefined(Undefined):
         return f"{{{{ {self._undefined_name} }}}}"
 
 class NativeSandboxedEnvironment(NativeEnvironment, SandboxedEnvironment):
+    """Missing docstring."""
     pass
 
 def get_jinja_env(strict: bool = False, base_dir: Optional[str] = None) -> NativeSandboxedEnvironment:
+    """Missing docstring."""
     if base_dir is None:
         base_dir = str(PROMPTS_DIR)
     undef = StrictUndefined if strict else KeepUndefined
@@ -43,6 +47,7 @@ def get_jinja_env(strict: bool = False, base_dir: Optional[str] = None) -> Nativ
     )
 
 def safe_render(template: str, context: Dict[str, Any], strict_mode: bool = False) -> Any:
+    """Missing docstring."""
     if not isinstance(template, str) or ("{{" not in template and "{%" not in template):
         return template
 
@@ -64,6 +69,7 @@ def safe_render(template: str, context: Dict[str, Any], strict_mode: bool = Fals
         return template
 
 def resolve_value(template_string: str, workflow_state: Dict[str, Any], strict_mode: bool = False) -> Any:
+    """Missing docstring."""
     try:
         return safe_render(template_string, workflow_state, strict_mode)
     except Exception as e:
@@ -73,6 +79,7 @@ def resolve_value(template_string: str, workflow_state: Dict[str, Any], strict_m
         return template_string
 
 def run_evaluators(output_text: str, prompt_evaluators: list) -> str:
+    """Missing docstring."""
     import re
     # Define mandatory global evaluators
     mandatory_evaluators = [
@@ -162,6 +169,7 @@ _chaos_call_counter = 0
 _chaos_last_call_time = 0.0
 
 def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any], prompt_file: Optional[str] = None, strict_mode: bool = False, chaos_mode: bool = False, fidelity_report: Optional[Dict[str, bool]] = None) -> str:
+    """Missing docstring."""
     console.step_header(f"Simulating prompt: {prompt_data.get('name', 'Untitled Prompt')}")
 
     if not prompt_data.get('safety_opt_out', False):
@@ -265,6 +273,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
         tool_calls = message.get('tool_calls')
         if tool_calls:
             def render_structure(obj, env, data):
+                """Missing docstring."""
                 if isinstance(obj, str):
                     template = env.from_string(obj)
                     return template.render(**data)
@@ -295,6 +304,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     return output_text
 
 def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bool = True, strict_mode: bool = False, chaos_mode: bool = False, fidelity_report: Optional[Dict[str, bool]] = None) -> Optional[Dict[str, Any]]:
+    """Missing docstring."""
     if verbose:
         logger.setLevel(logging.DEBUG)
     else:

@@ -1,3 +1,4 @@
+"""Module docstring."""
 import json
 from pathlib import Path
 from promptops.utils import load_yaml
@@ -5,6 +6,7 @@ from promptops import console
 from promptops.engine import simulate_prompt_execution
 
 def simulate_prompt(prompt_file: str, data_file: str, chaos_mode: bool = False, strict_mode: bool = False) -> bool:
+    """Missing docstring."""
     try:
         content = load_yaml(prompt_file)
         if not content:

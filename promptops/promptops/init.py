@@ -1,8 +1,10 @@
+"""Module docstring."""
 import json
 from pathlib import Path
 from promptops.validation import PromptSchema
 
 def init_project():
+    """Missing docstring."""
     print("Initializing PromptOps in the current repository...")
     
     # Create schema

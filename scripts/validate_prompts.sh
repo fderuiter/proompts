@@ -5,14 +5,19 @@
 cd "$(dirname "$0")/.."
 
 echo "Running test suite..."
-uv run playwright install --with-deps chromium || exit 1
+if [ "${SKIP_SETUP:-0}" != "1" ]; then
+    echo "Installing Playwright dependencies..."
+    uv run playwright install --with-deps chromium || exit 1
+fi
 uv run pytest || exit 1
 
 echo "Building static HTML docs..."
 uv run mkdocs build --clean --strict || exit 1
 
-echo "Installing Node.js dependencies..."
-npm install || exit 1
+if [ "${SKIP_SETUP:-0}" != "1" ]; then
+    echo "Installing Node.js dependencies..."
+    npm install || exit 1
+fi
 
 echo "Running static accessibility scanner..."
 node scripts/accessibility-scan.js || exit 1
@@ -53,6 +58,9 @@ uv run ruff check --select F401,F841 . || exit 1
 
 echo "Checking for dead code..."
 uv run vulture || exit 1
+
+echo "Checking docstrings..."
+uv run python3 tools/tools/scripts/check_docstrings.py || exit 1
 
 echo "Testing documentation snippets simulation..."
 uv run python3 tools/tools/scripts/test_docs_snippets.py || exit 1

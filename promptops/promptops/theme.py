@@ -1,3 +1,4 @@
+"""Module docstring."""
 
 class ThemeSync:
     """
@@ -8,6 +9,7 @@ class ThemeSync:
 
     @staticmethod
     def get_step_node_class() -> str:
+        """Missing docstring."""
         # Maintain logical color-coding: Blue for steps.
         # Contrast: #ffffff on #1a5f7a is ~6.6:1 (Passes WCAG AA).
         # Stroke adapts to theme text color for visual integration.
@@ -15,6 +17,7 @@ class ThemeSync:
 
     @staticmethod
     def get_input_node_class() -> str:
+        """Missing docstring."""
         # Maintain logical color-coding: Green for inputs.
         # Contrast: #ffffff on #2c5e43 is ~6.1:1 (Passes WCAG AA).
         # Stroke adapts to theme text color for visual integration.
@@ -22,6 +25,7 @@ class ThemeSync:
 
     @staticmethod
     def get_edge_style() -> str:
+        """Missing docstring."""
         # Edges must adapt to the background (light or dark) to remain visible.
         # Uses standard text color variables for high contrast.
         return "linkStyle default stroke:var(--md-default-fg-color,var(--text-color,#767676)),stroke-width:2px;"

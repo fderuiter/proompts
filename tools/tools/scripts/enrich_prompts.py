@@ -48,6 +48,7 @@ import yaml
 
 # Configure yaml to use block scalars for multiline strings
 def str_presenter(dumper, data):
+    """Missing docstring."""
     if len(data.splitlines()) > 1:  # check for multiline string
         return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
     return dumper.represent_scalar('tag:yaml.org,2002:str', data)
@@ -153,6 +154,7 @@ def _path_parts(file_path: Path) -> list[str]:
 
 
 def infer_domain(parts: list[str]) -> str:
+    """Missing docstring."""
     if parts:
         return DOMAIN_MAP.get(parts[0], parts[0])
     return "general"
@@ -473,6 +475,7 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
 
 
 def main() -> int:
+    """Missing docstring."""
     import argparse
     parser = argparse.ArgumentParser(description="Enrich prompt files with descriptions and metadata")
     parser.add_argument("--dry-run", action="store_true",

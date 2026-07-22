@@ -45,6 +45,13 @@ repos:
         files: ^(prompts|workflows)/.*
         pass_filenames: false
 
+      - id: check-docstrings
+        name: Check Docstrings
+        entry: uv run python tools/tools/scripts/check_docstrings.py
+        language: system
+        files: ^(promptops/promptops|tools/tools/scripts)/.*\.py$
+        pass_filenames: false
+
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.3.4
     hooks:

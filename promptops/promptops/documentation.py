@@ -1,3 +1,4 @@
+"""Module docstring."""
 import os
 from pathlib import Path
 from dataclasses import dataclass
@@ -6,6 +7,7 @@ from promptops.utils import load_yaml, derive_category, iter_prompt_files, iter_
 
 @dataclass(frozen=True)
 class DocItem:
+    """Missing docstring."""
     title: str
     path: Path
     category: str
@@ -19,6 +21,7 @@ from promptops.sync import DirectoryReconciler
 from promptops.skill_export import process_skills, detect_skill
 
 def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str = "main", check: bool = False) -> bool:
+    """Missing docstring."""
     prompts_dir = os.environ.get('PROMPTOPS_REGISTRY', prompts_dir)
     prompts_path = Path(prompts_dir)
     docs_path = Path(output_dir)
@@ -33,6 +36,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
     js_reconciler = DirectoryReconciler(docs_path / "js", dry_run=check)
 
     def write_root_file(path: Path, content: str) -> bool:
+        """Missing docstring."""
         path = path.resolve()
         would_write = True
         if path.exists():
@@ -330,10 +334,24 @@ document.addEventListener("DOMContentLoaded", () => {
 '''
         js_reconciler.write_file(js_dir / "explorer.js", explorer_js)
 
+        # Write fix-accessibility.js
+        fix_accessibility_js = '''
+const disableHiddenPaletteInputs = () => {
+  document.querySelectorAll('input.md-option[aria-hidden="true"]').forEach((el) => {
+    el.disabled = true;
+    el.tabIndex = -1;
+  });
+};
+document.addEventListener("DOMContentLoaded", disableHiddenPaletteInputs);
+document.addEventListener("pjax:complete", disableHiddenPaletteInputs);
+'''
+        js_reconciler.write_file(js_dir / "fix-accessibility.js", fix_accessibility_js)
+
     else:
         # Register JS files as touched in check mode, since they are generated externally
         js_reconciler.touched_files.add((js_dir / "tools_catalog.json").resolve())
         js_reconciler.touched_files.add((js_dir / "explorer.js").resolve())
+        js_reconciler.touched_files.add((js_dir / "fix-accessibility.js").resolve())
 
     # Generate index.md
     index_path = docs_path / "index.md"

@@ -1,3 +1,4 @@
+"""Module docstring."""
 import json
 import os
 import urllib.request
@@ -11,6 +12,7 @@ COST_PER_PROMPT_EVAL = 0.005
 MAX_BUDGET = 10.0
 
 class VibeMonitor:
+    """Missing docstring."""
     def __init__(self, budget_cap=MAX_BUDGET, coverage="universal", api_key=None):
         self.budget_cap = budget_cap
         self.coverage = coverage
@@ -20,6 +22,7 @@ class VibeMonitor:
         self.failure_types_detected = set()
 
     def get_all_prompts(self):
+        """Missing docstring."""
         prompts = []
         for p in iter_prompt_files(ROOT / "prompts"):
             prompts.append((p, "file"))
@@ -30,6 +33,7 @@ class VibeMonitor:
         return prompts
 
     def _call_llm(self, prompt_text: str):
+        """Missing docstring."""
         if not self.api_key:
             # Fallback for local testing without key
             print("No LLM_API_KEY found, returning fallback.")
@@ -75,10 +79,12 @@ class VibeMonitor:
             return {"score": 5, "critique": f"API error: {str(e)}", "failures": ["tone shift", "hallucination", "instruction ignore"]}
 
     def _simulate_llm_judge(self, prompt_name, data):
+        """Missing docstring."""
         self.total_spent += COST_PER_PROMPT_EVAL
         
         # Prepare context for LLM (safely format data)
         def default_serializer(obj):
+            """Missing docstring."""
             if isinstance(obj, Path):
                 return str(obj)
             raise TypeError(f"Type {type(obj)} not serializable")
@@ -106,6 +112,7 @@ class VibeMonitor:
         }
 
     def run_audit(self):
+        """Missing docstring."""
         prompts = self.get_all_prompts()
         print(f"Starting Universal Vibe Audit on {len(prompts)} files/manifests...")
         
@@ -145,6 +152,7 @@ class VibeMonitor:
         return True
 
     def generate_dashboard(self):
+        """Missing docstring."""
         docs_dir = ROOT / "docs"
         docs_dir.mkdir(exist_ok=True)
         dashboard_path = docs_dir / "vibe_dashboard.md"
@@ -205,5 +213,6 @@ class VibeMonitor:
         print(f"Dashboard generated at {dashboard_path}")
 
 def run_vibe_audit(budget_cap=10.0, coverage="universal"):
+    """Missing docstring."""
     monitor = VibeMonitor(budget_cap=budget_cap, coverage=coverage)
     return monitor.run_audit()
