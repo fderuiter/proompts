@@ -2,9 +2,8 @@
 import os
 from pathlib import Path
 from dataclasses import dataclass
-from typing import List, Dict, Optional, Any
+from typing import List, Dict, Optional
 from promptops.utils import load_yaml, derive_category, iter_prompt_files, iter_workflow_files, derive_title
-import re
 
 @dataclass(frozen=True)
 class DocItem:
@@ -210,12 +209,13 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
         
 
     js_dir = docs_path / 'js'
+    js_reconciler.touched_files.add((js_dir / "fix-accessibility.js").resolve())
     # --- GENERATE EXPLORER CATALOG ---
     if not check:
         import json
         import sys
         sys.path.insert(0, os.environ.get('PROMPTOPS_ROOT', os.getcwd()))
-        from mcp_server import handle_list_tools, build_schema
+        from mcp_server import handle_list_tools
         import asyncio
         
         # We need to run handle_list_tools to get all tools. 
@@ -231,6 +231,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
                 "inputSchema": t.inputSchema
             })
             
+        catalog.sort(key=lambda x: x["name"])
         js_dir.mkdir(parents=True, exist_ok=True)
         js_reconciler.write_file(js_dir / "tools_catalog.json", json.dumps(catalog, indent=2))
         

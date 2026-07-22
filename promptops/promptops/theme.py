@@ -1,5 +1,4 @@
 """Module docstring."""
-from typing import Dict
 
 class ThemeSync:
     """

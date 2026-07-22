@@ -1,9 +1,6 @@
 import subprocess
 import sys
-import json
 import asyncio
-import io
-import re
 import logging
 from pathlib import Path
 from typing import Any
@@ -18,9 +15,8 @@ from mcp.server.models import InitializationOptions
 from mcp.server.stdio import stdio_server
 import mcp.types as types
 
-from promptops.utils import iter_prompt_files, iter_workflow_files, load_yaml, extract_template_vars, iter_skill_manifests, parse_skill_manifest, WORKFLOWS_DIR, PROMPTS_DIR
-from promptops.validation import PromptSchema, ProomptsValidationError
-from promptops.simulation import simulate_prompt
+from promptops.utils import load_yaml, extract_template_vars, WORKFLOWS_DIR, PROMPTS_DIR
+from promptops.validation import ProomptsValidationError
 
 # Setup basic logging to stderr
 logging.basicConfig(level=logging.INFO, stream=sys.stderr)
@@ -108,7 +104,7 @@ async def handle_list_tools() -> list[types.Tool]:
     for path in iter_skill_manifests(PROMPTS_DIR):
         try:
             manifest = parse_skill_manifest(path)
-            domain = manifest["metadata"].get("domain") or path.parent.name
+            manifest["metadata"].get("domain") or path.parent.name
             for skill in manifest["skills"]:
                 full_name = get_tool_name_mcp(path, skill)
 
@@ -198,7 +194,7 @@ async def handle_call_tool(name: str, arguments: dict | None) -> list[types.Text
     for path in iter_skill_manifests(PROMPTS_DIR):
         try:
             manifest = parse_skill_manifest(path)
-            domain = manifest["metadata"].get("domain") or path.parent.name
+            manifest["metadata"].get("domain") or path.parent.name
             for skill in manifest["skills"]:
                 full_name = get_tool_name_mcp(path, skill)
 

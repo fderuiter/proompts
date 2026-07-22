@@ -1,7 +1,6 @@
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from pathlib import Path
-import sys
 
 from tools.scripts.generate_overviews import get_prompt_metadata
 

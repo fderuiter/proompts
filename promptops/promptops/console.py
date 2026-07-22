@@ -1,8 +1,6 @@
 """Module docstring."""
 import json
-import sys
 import os
-from typing import Optional, Callable
 
 _no_color = False
 _json_mode = False

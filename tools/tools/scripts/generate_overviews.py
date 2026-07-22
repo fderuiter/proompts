@@ -18,7 +18,6 @@ python3 tools/tools/scripts/generate_overviews.py
 from __future__ import annotations
 
 from pathlib import Path
-import sys
 
 from promptops.utils import PROMPTS_DIR, WORKFLOWS_DIR, load_yaml, OVERVIEW_NAME, walk_workspace
 from promptops.sync import DirectoryReconciler

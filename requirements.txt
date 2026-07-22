@@ -8,3 +8,5 @@ streamlit>=1.30.0
 -e ./tools
 -e ./studio
 streamlit-mermaid
+ruff
+vulture

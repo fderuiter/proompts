@@ -53,6 +53,9 @@ uv run promptops docs --check || {
     exit 1
 }
 
+echo "Checking for unpruned imports and variables (check-only)..."
+uv run ruff check --select F401,F841 . || exit 1
+
 echo "Checking for dead code..."
 uv run vulture || exit 1
 

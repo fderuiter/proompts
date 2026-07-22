@@ -1,15 +1,12 @@
 import unittest
-import json
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 
-import sys
-from pathlib import Path
 
 from promptops.guard import guard, ProomptsValidationError  # type: ignore
 
 class TestProomptsGuard(unittest.TestCase):
     @patch("promptops.guard.load_yaml")
-    @patch("promptops.guard.Path.exists")
+    @patch("pathlib.Path.exists")
     def test_valid_json_output(self, mock_exists, mock_load_yaml):
         mock_exists.return_value = True
         mock_load_yaml.return_value = {
@@ -39,7 +36,7 @@ class TestProomptsGuard(unittest.TestCase):
         self.assertEqual(result, '{"summary": "A good summary", "score": 10}')
         
     @patch("promptops.guard.load_yaml")
-    @patch("promptops.guard.Path.exists")
+    @patch("pathlib.Path.exists")
     def test_missing_field(self, mock_exists, mock_load_yaml):
         mock_exists.return_value = True
         mock_load_yaml.return_value = {
@@ -69,7 +66,7 @@ class TestProomptsGuard(unittest.TestCase):
         self.assertEqual(str(ctx.exception), "missing required field: 'summary'")
 
     @patch("promptops.guard.load_yaml")
-    @patch("promptops.guard.Path.exists")
+    @patch("pathlib.Path.exists")
     def test_evaluator_failure(self, mock_exists, mock_load_yaml):
         mock_exists.return_value = True
         mock_load_yaml.return_value = {

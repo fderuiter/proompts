@@ -1,5 +1,4 @@
 """Module docstring."""
-import os
 import json
 from pathlib import Path
 from promptops.validation import PromptSchema

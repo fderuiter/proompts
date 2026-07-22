@@ -351,7 +351,6 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
     """Enrich a single prompt file with descriptions and metadata.
     Returns True if the file was modified.
     """
-    from pydantic import ValidationError
     from promptops.validation import PromptSchema
     
     content = load_yaml(file_path)
@@ -372,7 +371,7 @@ def enrich_file(file_path: Path, dry_run: bool = False) -> bool:
     current_vars = content.get("variables", [])
     vars_in_template = set(extract_template_vars(content))
     prompt_name = content.get("name", "")
-    prompt_desc = content.get("description", "")
+    content.get("description", "")
 
     # Extract prompt content for context
     messages = content.get("messages", [])

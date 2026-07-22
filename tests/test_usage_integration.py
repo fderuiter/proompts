@@ -2,7 +2,6 @@ import os
 import sys
 import pytest
 from unittest.mock import patch, MagicMock, mock_open
-import yaml
 
 DOCS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'docs'))
 

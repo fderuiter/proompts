@@ -1,6 +1,4 @@
-import os
 import sys
-from pathlib import Path
 
 from promptops.engine import simulate_prompt_execution, run_workflow
 from promptops.utils import ROOT, iter_markdown_files, load_yaml
