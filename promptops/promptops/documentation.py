@@ -205,6 +205,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
         
 
     js_dir = docs_path / 'js'
+    js_reconciler.touched_files.add((js_dir / "fix-accessibility.js").resolve())
     # --- GENERATE EXPLORER CATALOG ---
     if not check:
         import json
@@ -226,6 +227,7 @@ def generate_docs(prompts_dir: str, output_dir: str, repo_url: str, branch: str 
                 "inputSchema": t.inputSchema
             })
             
+        catalog.sort(key=lambda x: x["name"])
         js_dir.mkdir(parents=True, exist_ok=True)
         js_reconciler.write_file(js_dir / "tools_catalog.json", json.dumps(catalog, indent=2))
         
