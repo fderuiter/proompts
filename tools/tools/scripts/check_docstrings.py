@@ -51,7 +51,7 @@ def main():
     for directory in directories:
         if not os.path.exists(directory):
             continue
-        for root, dirs, files in os.walk(directory):
+        for root, dirs, files in os.walk(directory):  # noqa: TID251
             for file in files:
                 if file.endswith(".py") and not file.startswith("test_"):
                     filepath = os.path.join(root, file)
