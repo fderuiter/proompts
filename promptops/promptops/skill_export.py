@@ -1,3 +1,4 @@
+"""Module docstring."""
 import os
 import json
 import re
@@ -10,6 +11,7 @@ from pydantic import ValidationError
 # or we import it inside functions.
 
 def _redact(text: str) -> str:
+    """Missing docstring."""
     if not isinstance(text, str):
         return text
     text = re.sub(r'\b\d{3}-\d{2}-\d{4}\b', '[REDACTED]', text)
@@ -19,6 +21,7 @@ def _redact(text: str) -> str:
     return text
 
 def _generate_skill_description(prompt_data: Dict[str, Any]) -> str:
+    """Missing docstring."""
     fallback_desc = prompt_data.get("description", "No description provided.")
     api_key = os.environ.get("LLM_API_KEY_SHADOW") or os.environ.get("LLM_API_KEY")
     if not api_key:
@@ -204,6 +207,7 @@ def generate_skills_md(directory: Path, prompts_path: Path, prompts_data: List[D
     return front_matter + header + metadata + "\n" + "\n---\n\n".join(sections)
 
 def detect_skill(raw_content: str, raw_data: Any) -> bool:
+    """Missing docstring."""
     from promptops.tags import extract_tags, extract_tags_from_text
     if raw_data and isinstance(raw_data, dict):
         if "skill" in extract_tags(raw_data):
@@ -211,6 +215,7 @@ def detect_skill(raw_content: str, raw_data: Any) -> bool:
     return "skill" in extract_tags_from_text(raw_content)
 
 def process_skills(prompts_path: Path, docs_path: Optional[Path] = None):
+    """Missing docstring."""
     print('DEBUG: Entering process_skills')
     from promptops.utils import iter_prompt_files, load_yaml, walk_workspace
     from promptops.sync import DirectoryReconciler

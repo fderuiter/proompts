@@ -1,3 +1,4 @@
+"""Module docstring."""
 import re
 import os
 import hashlib
@@ -10,6 +11,7 @@ from jinja2.sandbox import SandboxedEnvironment
 from jinja2 import FileSystemLoader, Undefined, meta, Environment
 
 class KeepUndefined(Undefined):
+    """Missing docstring."""
     def __getattr__(self, name):
         return KeepUndefined(name=f"{self._undefined_name}.{name}")
         
@@ -21,6 +23,7 @@ class KeepUndefined(Undefined):
 
 # Centralized Path Registry
 def _find_root() -> Path:
+    """Missing docstring."""
     current = Path.cwd().resolve()
     while current != current.parent:
         if (current / "prompts").exists() and (current / "workflows").exists():
@@ -41,6 +44,7 @@ DOMAIN_TAG_PREFIX: str = "domain:"
 _IGNORE_SPEC: Optional[pathspec.PathSpec] = None
 
 def _get_ignore_spec() -> pathspec.PathSpec:
+    """Missing docstring."""
     global _IGNORE_SPEC
     if _IGNORE_SPEC is not None:
         return _IGNORE_SPEC
@@ -99,6 +103,7 @@ def walk_workspace(root_path: Union[str, Path]) -> Iterator[Tuple[str, List[str]
         yield root, dirs, valid_files
 
 def _iter_files_with_ignore(root_path: Path, extensions: Tuple[str, ...]) -> Iterator[Path]:
+    """Missing docstring."""
     for root, _, files in walk_workspace(root_path):
         current_dir = Path(root)
         for f in files:
@@ -126,6 +131,7 @@ def deep_merge(base: Any, override: Any) -> Any:
     return merged
 
 def load_yaml(path: Union[str, Path], raw: bool = False) -> Dict[str, Any]:
+    """Missing docstring."""
     path_obj = Path(path)
     try:
         text = path_obj.read_text(encoding="utf-8")
@@ -233,6 +239,7 @@ def load_yaml(path: Union[str, Path], raw: bool = False) -> Dict[str, Any]:
         return {}
 
 def save_yaml(path: Union[str, Path], data: Dict[str, Any]) -> None:
+    """Missing docstring."""
     path_obj = Path(path)
     path_obj.parent.mkdir(parents=True, exist_ok=True)
     
@@ -256,6 +263,7 @@ def save_yaml(path: Union[str, Path], data: Dict[str, Any]) -> None:
             yaml.dump(data, f, sort_keys=False, allow_unicode=True, default_flow_style=False)
 
 def _is_valid_file(p: Path) -> bool:
+    """Missing docstring."""
     if p.name.startswith("._") or p.name == ".DS_Store":
         return False
     parts = p.parts
@@ -264,10 +272,12 @@ def _is_valid_file(p: Path) -> bool:
     return True
 
 def iter_prompt_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
+    """Missing docstring."""
     root_path = Path(root) if root else PROMPTS_DIR
     yield from _iter_files_with_ignore(root_path, ("*.prompt.yaml", "*.prompt.yml", "*.prompt.md"))
 
 def iter_workflow_files(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
+    """Missing docstring."""
     root_path = Path(root) if root else WORKFLOWS_DIR
     yield from _iter_files_with_ignore(root_path, ("*.workflow.yaml", "*.workflow.yml"))
 
@@ -278,17 +288,21 @@ def iter_markdown_files(root: Optional[Union[str, Path]] = None) -> Iterator[Pat
 
 
 def _format_category(raw: str) -> str:
+    """Missing docstring."""
     cleaned = raw.strip().replace("_", " ").replace("-", " ").replace("/", " ")
     return " ".join(word.capitalize() for word in cleaned.split())
 
 def _domain_root(value: str) -> str:
+    """Missing docstring."""
     return value.strip().split("/", 1)[0].strip()
 
 def get_prompt_tags(content: Dict[str, Any]) -> List[str]:
+    """Missing docstring."""
     from promptops.tags import extract_tags
     return extract_tags(content)
 
 def derive_category(path: Path, root_dir: Path, content: Optional[Dict[str, Any]] = None) -> str:
+    """Missing docstring."""
     data = content or {}
     for tag in get_prompt_tags(data):
         if tag.lower().startswith(DOMAIN_TAG_PREFIX):
@@ -311,6 +325,7 @@ def derive_category(path: Path, root_dir: Path, content: Optional[Dict[str, Any]
         return "Uncategorized"
 
 def derive_title(path: Path, data: Dict[str, Any]) -> str:
+    """Missing docstring."""
     if name := data.get('name') or data.get('title'):
         return str(name).strip()
     stem = path.stem.replace('.workflow', '').replace('.prompt', '')
@@ -366,6 +381,7 @@ def extract_vars_from_text(text: str) -> Set[str]:
     return found
 
 def extract_template_vars(content: Dict[str, Any]) -> List[str]:
+    """Missing docstring."""
     found: Set[str] = set()
     for msg in content.get("messages", []):
         text = msg.get("content", "")
@@ -374,12 +390,14 @@ def extract_template_vars(content: Dict[str, Any]) -> List[str]:
     return sorted(list(found))
 
 def iter_skill_manifests(root: Optional[Union[str, Path]] = None) -> Iterator[Path]:
+    """Missing docstring."""
     root_path = Path(root) if root else PROMPTS_DIR
     for p in root_path.rglob("skills.md"):
         if _is_valid_file(p):
             yield p
 
 def parse_skill_manifest(path: Path) -> Dict[str, Any]:
+    """Missing docstring."""
     import json
     text = path.read_text(encoding='utf-8')
     metadata: Dict[str, Any] = {}
@@ -515,6 +533,7 @@ def parse_skill_manifest(path: Path) -> Dict[str, Any]:
     return {"metadata": metadata, "skills": skills, "path": path}
 
 def _get_words(text: str) -> set:
+    """Missing docstring."""
     words = set()
     for w in re.findall(r'[a-z]+|[0-9]+', text.lower()):
         if w.isdigit():

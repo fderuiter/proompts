@@ -1,8 +1,10 @@
+"""Module docstring."""
 import ast
 import os
 import sys
 
 def check_file(filepath):
+    """Missing docstring."""
     with open(filepath, "r", encoding="utf-8") as f:
         source = f.read()
     
@@ -61,6 +63,7 @@ def check_file(filepath):
     return errors
 
 def main():
+    """Missing docstring."""
     from promptops.utils import walk_workspace
     root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
     

@@ -1,4 +1,5 @@
 {
+  "description": "Missing docstring.",
   "properties": {
     "temperature": {
       "description": "Controls randomness (0.0-2.0)",

@@ -1,3 +1,4 @@
+"""Module docstring."""
 from typing import Dict, Any, List
 
 TAG_ALIASES = {

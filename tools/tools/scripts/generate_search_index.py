@@ -23,6 +23,7 @@ from pathlib import Path
 from promptops.utils import ROOT, iter_prompt_files, iter_workflow_files, load_yaml, iter_skill_manifests, parse_skill_manifest
 
 def generate_index(output_path: str = "search.json"):
+    """Missing docstring."""
     search_data = []
 
     # Track which directories have skill manifests

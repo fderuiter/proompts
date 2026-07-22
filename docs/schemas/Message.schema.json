@@ -1,6 +1,7 @@
 {
   "$defs": {
     "ToolCall": {
+      "description": "Missing docstring.",
       "properties": {
         "id": {
           "title": "Id",
@@ -25,6 +26,7 @@
       "type": "object"
     }
   },
+  "description": "Missing docstring.",
   "properties": {
     "role": {
       "anyOf": [

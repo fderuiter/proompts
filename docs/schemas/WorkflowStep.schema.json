@@ -1,6 +1,7 @@
 {
   "$defs": {
     "WorkflowEdge": {
+      "description": "Missing docstring.",
       "properties": {
         "target": {
           "title": "Target",
@@ -26,6 +27,7 @@
       "type": "object"
     }
   },
+  "description": "Missing docstring.",
   "properties": {
     "step_id": {
       "title": "Step Id",
