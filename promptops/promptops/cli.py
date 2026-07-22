@@ -57,6 +57,9 @@ def get_parser():
     # Init
     init_parser = subparsers.add_parser("init", help="Initialize PromptOps in the current repository")
 
+    # Verify
+    verify_parser = subparsers.add_parser("verify", help="Run the central verification script locally")
+
     # Validate
     validate_parser = subparsers.add_parser("validate", help="Validate prompt files")
     validate_parser.add_argument("--dir", help="Directory containing prompts", default=".")
@@ -130,6 +133,19 @@ def main():
 
     if args.command == "init":
         init_project()
+    elif args.command == "verify":
+        import subprocess
+        
+        env = os.environ.copy()
+        env["SKIP_SETUP"] = "1"
+        script_path = ROOT / "scripts" / "validate_prompts.sh"
+        
+        try:
+            result = subprocess.run([str(script_path)], cwd=ROOT, env=env)
+            sys.exit(result.returncode)
+        except Exception as e:
+            logger.error(f"Failed to execute verification script: {e}")
+            sys.exit(1)
     elif args.command == "validate":
         success = validate_prompts(args.dir, strict=args.strict, files=args.files)
         sys.exit(0 if success else 1)
@@ -169,8 +185,6 @@ def main():
     elif args.command == "search":
         search_prompts_func(args.query, args.verbose)
     elif args.command == "export-schemas":
-        import os
-        import json
         from promptops.validation import (
             ToolCall, Message, ModelParameters, InputVariable,
             PromptMetadata, InputSchema, MCPTool, PromptSchema, WorkflowInput,
