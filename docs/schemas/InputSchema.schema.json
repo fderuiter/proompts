@@ -1,4 +1,5 @@
 {
+  "description": "Missing docstring.",
   "properties": {
     "type": {
       "default": "object",
