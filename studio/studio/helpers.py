@@ -37,10 +37,13 @@ def render_schema_form(
     schema_class: Type[BaseModel],
     data: Dict[str, Any],
     skip_fields: List[str] = None,
-    key_prefix: str = ""
+    key_prefix: str = "",
+    layout_config: Dict[str, List[str]] = None,
+    layout_type: str = "tabs"
 ) -> Dict[str, Any]:
     """
     Dynamically generates Streamlit inputs from a Pydantic model's JSON schema.
+    Can accept a layout configuration mapping to render fields inside tabs or collapsible sections.
     """
     if skip_fields is None:
         skip_fields = []
@@ -48,11 +51,8 @@ def render_schema_form(
     schema = schema_class.model_json_schema()
     properties = schema.get("properties", {})
     
-    for field_name, field_info in properties.items():
-        if field_name in skip_fields:
-            continue
-            
-        val = data.get(field_name, "")
+    def render_field(field_name: str, field_info: Dict[str, Any], data_dict: Dict[str, Any]) -> Any:
+        val = data_dict.get(field_name, "")
         
         # Determine the label to use
         if "title" in field_info:
@@ -64,8 +64,8 @@ def render_schema_form(
             
         if field_name == "metadata":
             st.subheader("Metadata")
-            if "metadata" not in data or not data["metadata"]:
-                data["metadata"] = {}
+            if "metadata" not in data_dict or not data_dict["metadata"]:
+                data_dict["metadata"] = {}
                 
             meta_schema = {}
             if "$defs" in schema:
@@ -75,23 +75,47 @@ def render_schema_form(
                         break
                         
             for m_key, m_info in meta_schema.items():
-                m_val = data["metadata"].get(m_key, m_info.get("default", ""))
+                m_val = data_dict["metadata"].get(m_key, m_info.get("default", ""))
                 m_label = m_info.get("title", m_key)
                 if m_info.get("type") == "boolean":
-                    data["metadata"][m_key] = st.checkbox(m_label, value=bool(m_val), key=f"{key_prefix}meta_{m_key}")
+                    data_dict["metadata"][m_key] = st.checkbox(m_label, value=bool(m_val), key=f"{key_prefix}meta_{m_key}")
                 elif m_info.get("type") == "array":
                     m_val_str = ", ".join(m_val) if isinstance(m_val, list) else ""
                     res = st.text_input(m_label, value=m_val_str, key=f"{key_prefix}meta_{m_key}")
-                    data["metadata"][m_key] = [x.strip() for x in res.split(",") if x.strip()]
+                    data_dict["metadata"][m_key] = [x.strip() for x in res.split(",") if x.strip()]
                 else:
-                    data["metadata"][m_key] = st.text_input(m_label, value=m_val, key=f"{key_prefix}meta_{m_key}")
+                    data_dict["metadata"][m_key] = st.text_input(m_label, value=m_val, key=f"{key_prefix}meta_{m_key}")
         elif field_info.get("type") == "string":
             if field_name == "description" or "description" in field_name.lower():
-                data[field_name] = st.text_area(label, value=val, key=f"{key_prefix}{field_name}")
+                data_dict[field_name] = st.text_area(label, value=val, key=f"{key_prefix}{field_name}")
             else:
-                data[field_name] = st.text_input(label, value=val, key=f"{key_prefix}{field_name}")
+                data_dict[field_name] = st.text_input(label, value=val, key=f"{key_prefix}{field_name}")
         elif field_info.get("type") == "boolean":
-            data[field_name] = st.checkbox(label, value=bool(val), key=f"{key_prefix}{field_name}")
+            data_dict[field_name] = st.checkbox(label, value=bool(val), key=f"{key_prefix}{field_name}")
+            
+        return data_dict
+
+    if layout_config:
+        if layout_type == "tabs":
+            tabs = st.tabs(list(layout_config.keys()))
+            for tab, (tab_name, fields) in zip(tabs, layout_config.items()):
+                with tab:
+                    for field_name in fields:
+                        if field_name in skip_fields or field_name not in properties:
+                            continue
+                        data = render_field(field_name, properties[field_name], data)
+        else: # collapsible / expanders
+            for section_title, fields in layout_config.items():
+                with st.expander(section_title, expanded=True):
+                    for field_name in fields:
+                        if field_name in skip_fields or field_name not in properties:
+                            continue
+                        data = render_field(field_name, properties[field_name], data)
+    else:
+        for field_name, field_info in properties.items():
+            if field_name in skip_fields:
+                continue
+            data = render_field(field_name, field_info, data)
             
     return data
 
