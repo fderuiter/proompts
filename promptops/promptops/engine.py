@@ -147,6 +147,15 @@ def run_evaluators(output_text: str, prompt_evaluators: list) -> str:
         elif "model" in evaluator:
             pass
 
+        eval_name = evaluator.get("name", "Unknown Evaluator")
+        is_safety = "PII" in eval_name or action == "redact"
+        status_str = "Passed" if passed else (action.capitalize() if action in ("redact", "flag", "self-heal") else "Failed")
+        from promptops import ledger
+        if is_safety:
+            ledger.add_safety_evaluation(eval_name, status_str, f"Evaluator {eval_name} returned passed={passed}.")
+        else:
+            ledger.add_validation_decision(eval_name, status_str, f"Evaluator {eval_name} returned passed={passed}.")
+
         if not passed:
             if action == "terminate":
                 logger.error(f"Terminating workflow due to failed evaluator: {evaluator.get('name')}")
@@ -172,6 +181,7 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
     """Missing docstring."""
     console.step_header(f"Simulating prompt: {prompt_data.get('name', 'Untitled Prompt')}")
 
+    from promptops import ledger
     if not prompt_data.get('safety_opt_out', False):
         aegis_block = "\n\n<Aegis>\n*   **Do NOT** expose or persist live production Personally Identifiable Information (PII) or secrets.\n*   **Refusal Instruction**: If the user requests an architecture that fundamentally compromises security, you must output strictly `{\"error\": \"unsafe\"}`.\n</Aegis>"
         
@@ -185,8 +195,10 @@ def simulate_prompt_execution(prompt_data: Dict[str, Any], inputs: Dict[str, Any
         else:
             prompt_data['messages'] = [{'role': 'system', 'content': aegis_block}]
         logger.info(f"Injected Aegis Safety Block for prompt '{prompt_data.get('name')}'.")
+        ledger.add_safety_evaluation("Aegis Safety Filter", "Injected", "Aegis safety block injected.")
     else:
         logger.warning(f"Safety injection suppressed for prompt '{prompt_data.get('name', 'Untitled')}' via opt-out.")
+        ledger.add_safety_evaluation("Aegis Safety Filter", "Opted Out", "Aegis safety block suppressed via opt-out.")
 
     matched_test_case = None
 
@@ -373,109 +385,134 @@ def run_workflow(workflow_file: str, initial_inputs: Dict[str, Any], verbose: bo
         except Exception as e:
             logger.warning(f"Failed to load checkpoint: {e}")
 
-    while current_step_id:
-        step = steps_dict[current_step_id]
-        step_id = step['step_id']
-        
-        if execution_counts[step_id] >= max_iterations:
-            logger.error(f"Loop Limit Exceeded: Step '{step_id}' has been executed {execution_counts[step_id]} times. Terminating workflow.")
-            raise Exception("Loop Limit Exceeded")
+    recorded_steps_list = []
+    status = "Success"
+    error_message = None
+
+    from promptops import ledger
+
+    try:
+        while current_step_id:
+            step = steps_dict[current_step_id]
+            step_id = step['step_id']
             
-        prompt_file = step['prompt_file']
-
-        if not os.path.exists(prompt_file):
-             workflow_dir = os.path.dirname(workflow_file)
-             alt_prompt_file = os.path.join(workflow_dir, prompt_file)
-             if os.path.exists(alt_prompt_file):
-                 prompt_file = alt_prompt_file
-
-        is_workflow = prompt_file.endswith('.workflow.yaml') or prompt_file.endswith('.workflow.yml')
-
-        prompt_data = load_yaml(prompt_file) if os.path.exists(prompt_file) else {}
-        if not is_workflow and not prompt_data:
-            path_obj = Path(prompt_file)
-            from promptops.utils import resolve_fallback_prompt
-            prompt_data = resolve_fallback_prompt(path_obj)
-            if prompt_data:
-                logger.info(f"Loaded skill '{prompt_data['name']}' from manifest {path_obj.parent / 'skills.md'}")
-
-        if not prompt_data:
-            logger.warning(f"Skipping step {step_id} due to missing prompt file or skill.")
-            current_step_id = None
-            continue
-
-        prompt_inputs = {}
-        for var_name, template in step.get('map_inputs', {}).items():
-            prompt_inputs[var_name] = resolve_value(template, workflow_state, strict_mode)
-
-        logger.debug(f"Resolved inputs: {list(prompt_inputs.keys())}")
-        console.step_header(f"Simulating Step: {step_id} (Iteration {execution_counts[step_id] + 1})")
-
-        if is_workflow:
-            logger.info(f"Executing nested workflow: {prompt_file}")
-            # Ensure we pass the checkpoint variables implicitly if needed?
-            # Actually just recursively run
-            sub_workflow_state = run_workflow(prompt_file, prompt_inputs, verbose=verbose, strict_mode=strict_mode, chaos_mode=chaos_mode, fidelity_report=fidelity_report)
-            output = sub_workflow_state
-        else:
-            output = simulate_prompt_execution(prompt_data, prompt_inputs, prompt_file=prompt_file, strict_mode=strict_mode, chaos_mode=chaos_mode, fidelity_report=fidelity_report)
-
-        if step_id not in workflow_state['steps']:
-            workflow_state['steps'][step_id] = {'output': output, 'history': [output], 'iterations': 1}
-        else:
-            workflow_state['steps'][step_id]['output'] = output
-            workflow_state['steps'][step_id]['history'].append(output)
-            workflow_state['steps'][step_id]['iterations'] += 1
-            
-        execution_counts[step_id] += 1
-        logger.debug(f"Step '{step_id}' produced output: (Content hidden for security)")
-
-        next_step_id = None
-        next_prop = step.get('next')
-        
-        if next_prop is not None:
-            if isinstance(next_prop, str):
-                next_step_id = next_prop
-            elif isinstance(next_prop, list):
-                for edge in next_prop:
-                    if isinstance(edge, str):
-                        next_step_id = edge
-                        break
-                    elif isinstance(edge, dict):
-                        condition = edge.get('condition')
-                        target = edge.get('target')
-                        if condition:
-                            try:
-                                rendered_cond = resolve_value(condition, workflow_state, strict_mode)
-                                if rendered_cond is True or str(rendered_cond).lower() == 'true':
-                                    next_step_id = target
-                                    break
-                            except Exception as e:
-                                logger.warning(f"Failed to evaluate condition '{condition}': {e}")
-                        else:
-                            next_step_id = target
-                            break
-        else:
-            idx = next((i for i, s in enumerate(workflow_data['steps']) if s['step_id'] == step_id), -1)
-            if idx != -1 and idx + 1 < len(workflow_data['steps']):
-                next_step_id = workflow_data['steps'][idx + 1]['step_id']
+            if execution_counts[step_id] >= max_iterations:
+                logger.error(f"Loop Limit Exceeded: Step '{step_id}' has been executed {execution_counts[step_id]} times. Terminating workflow.")
+                raise Exception("Loop Limit Exceeded")
                 
-        if next_step_id and next_step_id not in steps_dict:
-            logger.error(f"Next step '{next_step_id}' not found in workflow steps.")
-            raise ValueError(f"Undefined next step: {next_step_id}")
+            prompt_file = step['prompt_file']
+
+            if not os.path.exists(prompt_file):
+                 workflow_dir = os.path.dirname(workflow_file)
+                 alt_prompt_file = os.path.join(workflow_dir, prompt_file)
+                 if os.path.exists(alt_prompt_file):
+                     prompt_file = alt_prompt_file
+
+            is_workflow = prompt_file.endswith('.workflow.yaml') or prompt_file.endswith('.workflow.yml')
+
+            prompt_data = load_yaml(prompt_file) if os.path.exists(prompt_file) else {}
+            if not is_workflow and not prompt_data:
+                path_obj = Path(prompt_file)
+                from promptops.utils import resolve_fallback_prompt
+                prompt_data = resolve_fallback_prompt(path_obj)
+                if prompt_data:
+                    logger.info(f"Loaded skill '{prompt_data['name']}' from manifest {path_obj.parent / 'skills.md'}")
+
+            if not prompt_data:
+                logger.warning(f"Skipping step {step_id} due to missing prompt file or skill.")
+                current_step_id = None
+                continue
+
+            prompt_inputs = {}
+            for var_name, template in step.get('map_inputs', {}).items():
+                prompt_inputs[var_name] = resolve_value(template, workflow_state, strict_mode)
+
+            logger.debug(f"Resolved inputs: {list(prompt_inputs.keys())}")
+            console.step_header(f"Simulating Step: {step_id} (Iteration {execution_counts[step_id] + 1})")
+
+            # Capture step start
+            ledger.start_step_capture(step_id, prompt_file, prompt_inputs)
+            output = None
+
+            try:
+                if is_workflow:
+                    logger.info(f"Executing nested workflow: {prompt_file}")
+                    # Ensure we pass the checkpoint variables implicitly if needed?
+                    # Actually just recursively run
+                    sub_workflow_state = run_workflow(prompt_file, prompt_inputs, verbose=verbose, strict_mode=strict_mode, chaos_mode=chaos_mode, fidelity_report=fidelity_report)
+                    output = sub_workflow_state
+                else:
+                    output = simulate_prompt_execution(prompt_data, prompt_inputs, prompt_file=prompt_file, strict_mode=strict_mode, chaos_mode=chaos_mode, fidelity_report=fidelity_report)
+            finally:
+                captured = ledger.get_current_step_capture()
+                if captured:
+                    captured["output"] = output
+                    recorded_steps_list.append(captured)
+                ledger.clear_step_capture()
+
+            if step_id not in workflow_state['steps']:
+                workflow_state['steps'][step_id] = {'output': output, 'history': [output], 'iterations': 1}
+            else:
+                workflow_state['steps'][step_id]['output'] = output
+                workflow_state['steps'][step_id]['history'].append(output)
+                workflow_state['steps'][step_id]['iterations'] += 1
+                
+            execution_counts[step_id] += 1
+            logger.debug(f"Step '{step_id}' produced output: (Content hidden for security)")
+
+            next_step_id = None
+            next_prop = step.get('next')
             
-        current_step_id = next_step_id
-        
-        try:
-            os.makedirs(checkpoint_dir, exist_ok=True)
-            with open(checkpoint_file, 'w', encoding='utf-8') as f:
-                json.dump({
-                    "workflow_state": workflow_state,
-                    "execution_counts": execution_counts,
-                    "next_step_id": current_step_id
-                }, f)
-        except Exception as e:
-            logger.warning(f"Failed to save checkpoint: {e}")
+            if next_prop is not None:
+                if isinstance(next_prop, str):
+                    next_step_id = next_prop
+                elif isinstance(next_prop, list):
+                    for edge in next_prop:
+                        if isinstance(edge, str):
+                            next_step_id = edge
+                            break
+                        elif isinstance(edge, dict):
+                            condition = edge.get('condition')
+                            target = edge.get('target')
+                            if condition:
+                                try:
+                                    rendered_cond = resolve_value(condition, workflow_state, strict_mode)
+                                    if rendered_cond is True or str(rendered_cond).lower() == 'true':
+                                        next_step_id = target
+                                        break
+                                except Exception as e:
+                                    logger.warning(f"Failed to evaluate condition '{condition}': {e}")
+                            else:
+                                next_step_id = target
+                                break
+            else:
+                idx = next((i for i, s in enumerate(workflow_data['steps']) if s['step_id'] == step_id), -1)
+                if idx != -1 and idx + 1 < len(workflow_data['steps']):
+                    next_step_id = workflow_data['steps'][idx + 1]['step_id']
+                    
+            if next_step_id and next_step_id not in steps_dict:
+                logger.error(f"Next step '{next_step_id}' not found in workflow steps.")
+                raise ValueError(f"Undefined next step: {next_step_id}")
+                
+            current_step_id = next_step_id
+            
+            try:
+                os.makedirs(checkpoint_dir, exist_ok=True)
+                with open(checkpoint_file, 'w', encoding='utf-8') as f:
+                    json.dump({
+                        "workflow_state": workflow_state,
+                        "execution_counts": execution_counts,
+                        "next_step_id": current_step_id
+                    }, f)
+            except Exception as e:
+                logger.warning(f"Failed to save checkpoint: {e}")
+    except Exception as e:
+        status = "Failed"
+        error_message = str(e)
+        raise
+    finally:
+        run_id = ledger.record_run(workflow_file, initial_inputs, recorded_steps_list, status=status, error_message=error_message)
+        workflow_state["run_id"] = run_id
 
     if os.path.exists(checkpoint_dir):
         try:

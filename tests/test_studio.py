@@ -97,3 +97,10 @@ def test_workflow_editor_launches_and_saves():
     if test_file.exists():
         os.remove(str(test_file))
 
+
+def test_audit_portal_launches():
+    at = AppTest.from_file(str(STUDIO_DIR / "studio/pages" / "5_🔍_Audit_Portal.py"))
+    at.run(timeout=15)
+    assert not at.exception
+
+
