@@ -341,16 +341,37 @@ def get_tool_name(path: Path, content: dict) -> Tuple[str, str]:
         name = path.name.replace(".workflow.yaml", "").replace(".prompt.yaml", "").replace(".prompt.yml", "").replace(".prompt.md", "")
         
     original_name = name
-    name = re.sub(r'[^a-zA-Z0-9_-]', '_', name)
-    name = re.sub(r'_+', '_', name)
-    name = name.strip('_')
+
+    # Find a root directory in the path's ancestry named "prompts" or "workflows"
+    root_dir = PROMPTS_DIR
+    for parent in path.parents:
+        if parent.name in ("prompts", "workflows"):
+            root_dir = parent
+            break
+
+    category = derive_category(path, root_dir, content)
+    domain = category.lower().strip()
+    domain = re.sub(r'[^a-z0-9_-]', '_', domain)
+    domain = re.sub(r'_+', '_', domain)
+    domain = domain.strip('_')
+
+    # Replace double underscore with a sentinel to avoid being collapsed by collapsing regex
+    sentinel = "DOUBLEUNDERSCORE"
+    namespaced_name = f"{domain}{sentinel}{name}"
     
-    if len(name) > 64:
-        hash_input = f"{path}::{original_name}"
+    namespaced_name = re.sub(r'[^a-zA-Z0-9_-]', '_', namespaced_name)
+    namespaced_name = re.sub(r'_+', '_', namespaced_name)
+    namespaced_name = namespaced_name.strip('_')
+    
+    # Restore double underscore
+    namespaced_name = namespaced_name.replace(sentinel, "__")
+    
+    if len(namespaced_name) > 64:
+        hash_input = f"{path}::{domain}__{original_name}"
         hash_suffix = hashlib.md5(hash_input.encode('utf-8')).hexdigest()[:8]
-        name = f"{name[:55]}_{hash_suffix}"
+        namespaced_name = f"{namespaced_name[:55]}_{hash_suffix}"
         
-    return original_name, name
+    return original_name, namespaced_name
 
 def get_tool_name_mcp(path: Path, content: dict) -> str:
     """Wrapper that just returns the sanitized name for MCP server."""

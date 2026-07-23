@@ -106,10 +106,36 @@ def test_tool_names():
     p = Path("/app/prompts/sales/emails/cold_email.yaml")
     name, ns = get_tool_name(p, {})
     assert name == "cold_email.yaml"
-    assert ns == "cold_email_yaml"
+    assert ns == "sales__cold_email_yaml"
     
     mcp = get_tool_name_mcp(p, {})
-    assert mcp == "cold_email_yaml"
+    assert mcp == "sales__cold_email_yaml"
+
+def test_namespaced_tool_registry_and_truncation():
+    # 1. Base case
+    p = Path("/app/prompts/clinical/trial_execution/breast_cancer_trial.prompt.yaml")
+    name, ns = get_tool_name(p, {})
+    assert name == "breast_cancer_trial"
+    assert ns == "clinical__breast_cancer_trial"
+    
+    # 2. Exceeding 64 characters
+    p_long = Path("/app/prompts/clinical/trial_execution/a_very_long_name_that_will_definitely_exceed_sixty_four_characters_when_prefixed.prompt.yaml")
+    _, ns_long = get_tool_name(p_long, {})
+    assert len(ns_long) == 64
+    assert ns_long.startswith("clinical__")
+    
+    # 3. Duplicate base names in different domains
+    p_clinical = Path("/app/prompts/clinical/data_validation.prompt.yaml")
+    p_business = Path("/app/prompts/business/data_validation.prompt.yaml")
+    _, ns_clinical = get_tool_name(p_clinical, {})
+    _, ns_business = get_tool_name(p_business, {})
+    assert ns_clinical == "clinical__data_validation"
+    assert ns_business == "business__data_validation"
+    
+    # 4. Explicit domain metadata override
+    p_override = Path("/app/prompts/unknown/tool.prompt.yaml")
+    _, ns_override = get_tool_name(p_override, {"metadata": {"domain": "Override Scientific"}})
+    assert ns_override == "override_scientific__tool"
 
 def test_extract_vars():
     text = "Hello {{ name }}, welcome to {{ place.name }}."
